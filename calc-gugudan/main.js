@@ -1,6 +1,8 @@
 // 필요한 모듈을 불러옵니다.
 import readlineSync from 'readline-sync';
+import { execSync } from 'child_process';
 
+execSync("chcp 65001");
 // 프로그램 시작
 function main() {
   // 사용자로부터 입력을 받습니다.
@@ -87,13 +89,11 @@ function calculator() {
 // 구구단 출력 함수
 function printMultiplicationTable() {
     // 여기에 코드를 작성하세요.
-    let a = 2;
-    for (let i = 1; i < 9; i++) {
-        console.log(`${a}단`)
-        for (let b = 1; b <= 9; b++) {
-            console.log(`${a} x ${b} = ${a * b}`)
+    for (let i = 2; i <= 9; i++) {
+        console.log(`\n${i}단`)
+        for (let j = 1; j <= 9; j++) {
+            console.log(`${i} x ${j} = ${i * j}`)
         }
-        a++
     }
 }
 

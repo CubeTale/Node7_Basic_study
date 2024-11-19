@@ -2,10 +2,9 @@
 
 // 문제 1: 두 숫자를 더하는 함수를 작성하고 결과를 출력하세요.
 function plus(a, b){
-    let num = a + b;
-    console.log(a + " + " + b + " = " + num);
+    return a + b;
 }
-plus(10, 15);
+console.log(plus(10, 15));
 // 문제 2: 이름을 매개변수로 받아서 "안녕하세요, [이름]님!"을 출력하는 함수를 작성하세요.
 function greet(name){
     console.log(`안녕하세요, ${name}님!`)
@@ -31,3 +30,11 @@ let array = [15, "만두", 7, 8, 10];
 array.forEach(function (a){
     console.log("배열 : " + a);
 })
+
+// function print(array) {
+//     for (let i = 0; i < array.length; i++) {
+//         console.log(array[i]);
+//     }
+// }
+// print([15, "만두", 7, 8, 10]);
+// ^ 튜터님 답안
