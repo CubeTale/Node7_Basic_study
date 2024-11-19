@@ -51,8 +51,11 @@ switch (day) {
     case 6:
         console.log('토요일입니다.');
         break;
-    default:
+    case 7:
         console.log('일요일입니다.');
+        break;
+    default:
+        console.log('1~7까지 숫자중에 입력해 주세요.');
 }
 // 문제 5: 두 숫자를 비교하여 큰 수를 출력하세요.
 let a = 5;
@@ -60,6 +63,6 @@ let b = 10;
 
 if (a > b) {
     console.log(a + "와 " + b +"중 큰 수는 " + a + "입니다.");
-} else if (a < b) {
+} else {
     console.log(a + "와 " + b +"중 큰 수는 " + b + "입니다.");
 }
