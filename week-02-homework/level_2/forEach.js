@@ -7,7 +7,9 @@ const objArray = [
 // myForEach 를 구현하여 arr.forEach 와 동일한 값이 나오도록 하기.
 function myForEach(arr, callback) {
     // myForEach 구현
-    return arr.forEach(callback);
+    for (let i = 0; i < arr.length; i++) {
+        callback(arr[i]);
+    }
 }
 
 /**

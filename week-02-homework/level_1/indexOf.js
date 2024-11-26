@@ -2,7 +2,12 @@
 const arr = [1, 2, 3, 4, 5];
 function myIndexOf(arr, value) {
     // myIndexOf 구현
-    return arr.indexOf(value);
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] === value){
+            return i
+        }
+    }
+    return -1
 }
 
 const index1 = arr.indexOf(3); // 2
