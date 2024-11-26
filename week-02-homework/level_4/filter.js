@@ -7,7 +7,13 @@ const objArray = [
 // myFilter 를 구현하여 arr.filter 와 동일한 값이 나오도록 하기.
 function myFilter(arr, callback) {
     // myFilter 구현
-    return arr.filter(callback);
+    let filters = [];
+    for(let i = 0; i < arr.length; i++) {
+        if (callback(arr[i])) {
+            filters.push(arr[i]);
+        }
+    }
+    return filters;
 }
 
 const result1 = objArray.filter(function (obj) {

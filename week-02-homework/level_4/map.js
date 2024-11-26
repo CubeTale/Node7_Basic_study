@@ -7,7 +7,12 @@ const objArray = [
 // myMap를 구현하여 arr.map과 동일한 값이 나오도록 하기.
 function myMap(arr, callback) {
     // myMap 구현
-    return arr.map(callback);
+    let array = [];
+    for (let i = 0; i < arr.length; i++) {
+        const value = callback(arr[i]);
+        array.push(value);
+    }
+    return array;
 }
 
 const result1 = objArray.map(function (obj) {
@@ -19,5 +24,3 @@ const result2 = myMap(objArray, function (obj) {
 });
 console.log(result1);
 console.log(result2);
-console.log(Object.entries(result1).toString() === Object.entries(result2).toString()); // true
-// 비교하는 방법은 구글링을 하였습니다.
