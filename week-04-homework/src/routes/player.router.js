@@ -1,16 +1,14 @@
-import express from "express";
-import players from "./db.js";
+import express from 'express';
+import players from '../models/player.models.js';
 
-const app = express();
-app.use(express.json()); // JSON 요청 본문 파싱
-
+const router = express();
 // 모든 선수 조회
-app.get('/api/players', (req, res, next) => {
+router.get('/api/players', (req, res, next) => {
     res.json(players);
 });
 
 // 특정 선수 조회
-app.get('/api/players/:id', (req, res, next) => {
+router.get('/api/players/:id', (req, res, next) => {
     const playerId = parseInt(req.params.id);
     const player = players.find(p => p.id === playerId);
     
@@ -22,7 +20,7 @@ app.get('/api/players/:id', (req, res, next) => {
 });
 
 // 선수 추가
-app.post('/api/players', (req, res, next) => {
+router.post('/api/players', (req, res, next) => {
     const newPlayer = {
         id: players.length + 1, // 새로운 ID 생성
         ...req.body // 요청 본문에서 선수 정보 가져오기
@@ -32,7 +30,7 @@ app.post('/api/players', (req, res, next) => {
 });
 
 // 특정 선수 수정
-app.put('/api/players/:id', (req, res, next) => {
+router.put('/api/players/:id', (req, res, next) => {
     const playerId = parseInt(req.params.id);
     const playerIndex = players.findIndex(p => p.id === playerId);
     
@@ -49,7 +47,7 @@ app.put('/api/players/:id', (req, res, next) => {
 });
 
 // 특정 선수 삭제
-app.delete('/api/players/:id', (req, res, next) => {
+router.delete('/api/players/:id', (req, res, next) => {
     const playerId = parseInt(req.params.id);
     const playerIndex = players.findIndex(p => p.id === playerId);
     
@@ -61,8 +59,4 @@ app.delete('/api/players/:id', (req, res, next) => {
     }
 });
 
-// 서버 실행
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`${PORT} 포트로 서버가 열렸습니다! `);
-});
+export default router;
