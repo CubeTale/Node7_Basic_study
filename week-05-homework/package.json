@@ -1,0 +1,19 @@
+{
+  "name": "week-04-homework",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.7",
+    "prisma": "^6.0.1"
+  },
+  "description": ""
+}
