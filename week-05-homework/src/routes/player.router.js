@@ -1,7 +1,7 @@
 import express from 'express';
 import prisma from '../controllers/controller.js';
 
-const router = express();
+const router = express.Router();
 // 모든 선수 조회
 router.get('/api/players', async (req, res, next) => {
   const player = await prisma.players.findMany();
